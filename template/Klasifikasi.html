@@ -1,0 +1,263 @@
+
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head><script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>INTERLOPE</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
+
+    
+
+    
+
+<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='icon.png') }}" sizes="180x180">
+<link rel="icon" href="{{ url_for('static', filename='icon.png') }}" sizes="32x32" type="image/png">
+<link rel="icon" href="{{ url_for('static', filename='icon.png') }}" sizes="16x16" type="image/png">
+<link rel="manifest" href="{{ url_for('static', filename='icon.png') }}">
+<link rel="mask-icon" href="{{ url_for('static', filename='icon.png') }}" color="#712cf9">
+<link rel="icon" href="{{ url_for('static', filename='icon.png') }}">
+<meta name="theme-color" content="#712cf9">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	 
+	 @media (min-width: 481px) and (max-width: 768px) {
+		.container {
+    flex-direction: column;
+	}
+
+	.container div {
+    font-size: 4rem;
+	}
+	}
+
+	@media (min-width: 769px) and (max-width: 1200px) {
+	.container div {
+    font-size: 4rem;
+	}
+	}
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+	  
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.3/examples/cover/cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-1000 w-1000 text-bg-dark bg-white">
+   <div class="position-absolute top-0 start-0 w-100 h-500 d-flex align-items-center" style="background: rgba(6, 3, 21, .5);">
+    
+<div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+		<img class="float-md-start mb-0" src="{{ url_for('static', filename='lambang.png') }}" width="250" height="75"></img>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="/">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/Klasifikasi Mata">Klasifikasi Mata</a>
+		 <a class="nav-link fw-bold py-1 px-0" href="/Hasil">Hasil Deteksi</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/Tentang Kami">Tentang Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-3">
+   <br></br>
+   <h1 class="text-center text-dark">KLASIFIKASI CITRA FUNDUS MATA YANG DAPAT DIDETEKSI</h1>
+   <br></br>
+   <div class="row featurette">
+      <div class="col-md-7" style="text-align: justify;">
+        <h2 class="featurette-heading fw-normal lh-1 text-dark">CATARACT<h2>
+        <p class="lead">Katarak adalah suatu penyakit ketika lensa mata menjadi keruh dan berawan. Penyakit mata ini merupakan penyebab kebutaan utama di dunia yang dapat diobati.</p>
+		<p class="lead">Pada penderita katarak, pembuluh darah mata tidak terlihat jelas. Hal tersebut dikarenakan lensa mata yang keruh dan terlihat seperti tertutupi awan.</p>
+		<p class="lead">Penyebab katarak yang paling umum ditemui adalah akibat proses penuaan atau trauma yang menyebabkan perubahan pada jaringan mata. Beberapa kelainan genetik bawaan juga bisa menyebabkan masalah kesehatan lain yang bisa meningkatkan risiko katarak. Selain itu, katarak juga bisa disebabkan oleh kondisi mata lain, operasi mata sebelumnya, atau kondisi medis seperti diabetes. Penggunaan obat steroid jangka panjang juga bisa menyebabkan penyakit mata tersebut berkembang.</p>
+		<p class="lead">Terdapat beberapa faktor yang bisa meningkatkan risiko katarak, antara lain:</p>
+		<p class="lead">
+		Penuaan. Penuaan adalah penyebab tersering dari kekeruhan lensa atau katarak.Riwayat trauma. Lensa mata yang pernah mengalami trauma, seperti masuknya serpihan material tajam ke mata, terbentur bola, kembang api, dapat membuat katarak timbul lebih cepat. Mengonsumsi obat-obatan tertentu dalam jangka waktu lama, seperti obat kortikosteroid dan amiodaron, dapat memicu katarak.</p>
+		<p class="lead">
+		Jika katarak tidak terlalu mengganggu, kamu mungkin hanya perlu mengenakan kacamata baru untuk membantu kamu melihat lebih baik.
+		Tetapi jikakatarak menyebabkan penglihatan semakin memburuk dan sulit menjalani aktivitas sehari-hari, prosedur operasi merupakan pengobatan yang bisa dilakukan untuk mengatasi masalah mata tersebut.
+		Operasi katarak pada umumnya aman dan tidak membutuhkan rawat inap. Ada dua jenis operasi katarak, yaitu:</p>
+		<p class="lead">
+		Small incision cataract surgery (phacoemulsification). Operasi ini dilakukan dengan melakukan insisi kecil pada tepi kornea. Selanjutnya, dokter akan menyinarkan gelombang ultrasound untuk menghancurkan lensa lalu diambil menggunakan alat penghisap.
+		Extracapsular surgery. Operasi ini membutuhkan insisi yang lebih besar untuk mengeluarkan inti lensa yang berkabut. Selanjutnya, sisa lensa dikeluarkan dengan menggunakan alat penghisap.</p> 
+      </div>
+      <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='cataract_001.jpg') }}" width="500" height="500">
+		<h2 class="text-center text-dark">Mata Cataract</h2>       
+	   </div>
+    </div>
+	 <br></br>
+	 <div class="row featurette">
+      <div class="col-md-7 order-md-2" style="text-align: justify;">
+        <h2 class="featurette-heading fw-normal lh-1 text-dark">GLAUCOMA<h2>
+        <p class="lead">Glaukoma adalah sekelompok kondisi mata yang merusak saraf optik. Adapun fungsi saraf optik adalah mengirimkan informasi visual dari mata ke otak untuk memaksimalkan penglihatan.</p>
+		<p class="lead">Kondisi mata ini dapat terjadi pada usia berapa pun, tetapi lebih sering terjadi pada orang dewasa yang lebih tua. Kondisi ini adalah salah satu penyebab utama kebutaan bagi orang berusia lebih dari 60 tahun. </p>
+		<p class="lead">Karakteristik fundus retina pada penderita glaukoma sangat mirip dengan penderita katarak yaitu lensa mata terlihat keruh. Namun, kekeruhan lensa pada penderita glaukoma tidak sekeruh pada penderita katarak.</p>
+		<p class="lead">Berikut gejala yang umum pengidap kondisi ini rasakan::</p>
+		<p class="lead">
+		Nyeri pada mata, Sakit kepala, Melihat bayangan lingkaran pada mata ketika melihat ke sekeliling cahaya, Mata memerah, Mual atau muntah, Mata berkabut (khususnya pada bayi), Penglihatan yang makin menyempit hingga akhirnya tidak dapat melihat objek sama sekali.</p>
+		<p class="lead">
+		Apakah Glaukoma Bisa Bisembuhkan?</p>
+		<p class="lead">
+		Kerusakan mata yang timbul akibat kondisi mata ini tidak dapat sembuh. Tetapi pengobatan dan pemeriksaan rutin dapat membantu memperlambat atau mencegah kehilangan penglihatan. Terutama jika seseorang terkena penyakit ini pada tahap awal.</p> 
+		<p class="lead">Pencegahan Glaukoma</p>     
+		<p class="lead">Jaga kesehatan mata sedari awal dengan konsumsi makanan yang mengandung vitamin A. 
+		Rutin memeriksaan kesehatan mata agar masalah mata seperti glaukoma dapat terdiagnosis dan tertangani secepat mungkin. Adapun jangka waktu yang para ahli rekomendasikan untuk melakukan tes mata adalah setidaknya setiap 2 tahun. 
+		Gunakan obat tetes mata yang diresepkan dokter secara teratur. Obat tetes mata glaukoma dapat secara signifikan mengurangi risiko tekanan mata tinggi berkembang menjadi glaukoma.
+		Cedera mata yang serius dapat menyebabkan glaukoma. Jadi, gunakanlah pelindung mata saat berolahraga atau saat bekerja dengan menggunakan alat-alat listrik.</p>
+	 </div>
+      <div class="col-md-5 order-md-1">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='glaucoma_013.jpg') }}" width="500" height="500">
+		<h2 class="text-center text-dark">Mata Glaucoma</h2>       
+	   </div>
+    </div>
+	 <br></br>
+	 <div class="row featurette">
+      <div class="col-md-7" style="text-align: justify;">
+        <h2 class="featurette-heading fw-normal lh-1 text-dark">DIABETIC RETINOPATHY<h2>
+        <p class="lead">Retinopati diabetik adalah gangguan pada mata yang terjadi pada penderita diabetes. Pada awalnya, retinopati diabetik sering kali hanya menunjukkan gejala ringan atau bahkan tidak bergejala sama sekali. Namun, apabila tidak ditangani, retinopati diabetik dapat menyebabkan kebutaan.</p>
+		<p class="lead">Retinopati diabetik merupakan salah satu komplikasi dari penyakit diabetes. Komplikasi ini menyebabkan penyumbatan pada pembuluh darah di bagian retina mata.</p>
+		<p class="lead">Semua penderita diabetes berisiko terserang retinopati diabetik, tetapi risikonya akan lebih tinggi bila memiliki faktor-faktor berikut:</p>
+		<p class="lead">
+		Kadar kolesterol tinggi, Tekanan darah tinggi, Sedang hamil, Kebiasaan merokok, Kadar gula darah tidak terkontrol dengan baik, Kadar gula darah tinggi (hiperglikemia) dalam waktu lama</p>
+		<p class="lead">
+		Awalnya, retinopati diabetik tidak menunjukkan gejala, tetapi seiring waktu, akan muncul gejala Penglihatan menurun secara bertahap, Bercak hitam pada penglihatan, Noda yang melayang pada penglihatan (floaters), Penglihatan berbayang, Nyeri pada mata atau mata merah</p>
+		<p class="lead">
+		Cara mencegah retinopati diabetik adalah dengan mencegah diabetes, yaitu dengan menjaga kadar gula darah tetap normal. 
+		Pantau dan catat kadar gula darah beberapa kali dalam sehari, kemudian laporkan hasilnya ke dokter ketika kontrol, 
+		Konsumsi makanan dengan gizi lengkap dan seimbang,
+		Perbanyak asupan buah-buahan dan sayuran,
+		Batasi asupan gula dan lemak jenuh,
+		Turunkan berat badan hingga mencapai indeks massa tubuh (IMT),
+		Lakukan olahraga dengan intensitas sedang, seperti berjalan cepat, minimal 150 menit tiap minggu,
+		Gunakan obat pengontrol gula darah atau insulin sesuai dengan anjuran dokter,
+		Selalu waspada bila merasa ada perubahan pada penglihatan,
+		Hentikan kebiasaan merokok atau mengonsumsi minuman beralkohol,
+		Jaga kadar kolesterol dan tekanan darah agar tetap normal,
+		Lakukan pemeriksaan mata secara rutin, minimal 1 tahun sekali.</p> 
+      </div>
+      <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='diabetic.jpeg') }}" width="500" height="500">
+		<h2 class="text-center text-dark">Mata Diabetic Retinopathy</h2>       
+	   </div>
+    </div>
+	 <br></br>
+  <div class="row featurette">
+      <div class="col-md-7 order-md-2" style="text-align: justify;">
+        <h2 class="featurette-heading fw-normal lh-1 text-dark">NORMAL<h2>
+        <p class="lead">Mata normal (emetropi) adalah mata yang dapat melihat benda pada jarak jauh tak berhingga maupun benda jarak dekat (25 – 30 cm) dengan jelas.</p>
+		<p class="lead">Agar Mata Tetap Sehat, Lakukan Hal Ini</p>
+		<p class="lead">
+		Konsumsi Makanan Sehat.
+		Biar indra penglihatan ini selalu sehat, cobalah untuk rutin mengonsumsi makanan yang banyak mengandung vitamin C dan E, asam lemak omega-3, zink, dan lutein.   
+		Kamu bisa mendapat kandungan nutrisi tersebut dengan mengonsumsi makanan, seperti sayuran hijau, tuna, telur, kacang-kacangan, blueberry, blackberry, dan jeruk.</p>
+		<p class="lead">
+		Berhenti Merokok
+		Kebiasaan merokok nyatanya tidak hanya mengganggu kesehatan paru-paru dan jantung, tetapi juga bisa memicu gangguan pada mata. Asap rokok yang mengenai mata disebut bisa meningkatkan risiko terjadinya katarak, degenerasi makula, dan kerusakan saraf optik yang bisa menyebabkan kebutaan serta merusak retina.</p>
+		<p class="lead">
+		Kacamata Pelindung
+		Menjaga kesehatan mata salah satunya bisa dilakukan dengan menggunakan kacamata, terutama saat beraktivitas di luar ruangan atau di depan komputer. Agar mata tidak mudah rusak, kamu bisa mengenakan kacamata anti-radiasi jika harus bekerja pada waktu yang lama di depan komputer. Sementara saat beraktivitas di bawah terik matahari, pastikan selalu mengenakan kacamata hitam.</p>
+		<p class="lead">
+		Istirahat dari Komputer
+		Terlalu lama menatap layar komputer atau laptop juga bisa meningkatkan risiko kerusakan pada mata. Hal ini bisa menyebabkan mata kering dan tegang, pandangan menjadi kabur, nyeri leher, sakit kepala, sakit  pada bahu dan punggung, serta sulit fokus menatap kejauhan.</p> 
+		<p class="lead">
+		Rutin Periksa Mata
+		Rutin melakukan pemeriksaan pada mata juga bisa menjadi cara terbaik untuk mencegah kerusakan. Sebab, pemeriksaan mata bisa memantau kondisi bagian tersebut dan gangguan atau masalah kesehatan yang muncul bisa segera dideteksi. Disarankan bagi orang yang berusia lanjut ataupun muda, baik pria maupun wanita harus rutin memeriksakan mata ke dokter spesialis mata sekurang-kurangnya 2 tahun sekali.</p>
+
+      </div>
+      <div class="col-md-5 order-md-1">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='NL_049.jpg') }}" width="500" height="500">
+		  <h2 class="text-center text-dark">Mata Normal</h2>
+        </div>
+    </div>
+	   <br></br>
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p>Contact Us <a href="https://wa.me/0895389719773" class="text-white">Whatsapp</a>, by <a href="https://www.instagram.com/interlope_23/" class="text-white">@interlope_23</a>.</p>
+  </footer>
+</div>
+
+
+    
+  </body>
+</html>

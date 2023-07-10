@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> 
+
+	<link rel="apple-touch-icon" href="{{ url_for('static', filename='icon.png') }}" sizes="180x180">
+	<link rel="icon" href="{{ url_for('static', filename='icon.png') }}" sizes="32x32" type="image/png">
+	<link rel="icon" href="{{ url_for('static', filename='icon.png') }}" sizes="16x16" type="image/png">
+	<link rel="manifest" href="{{ url_for('static', filename='icon.png') }}">
+	<link rel="mask-icon" href="{{ url_for('static', filename='icon.png') }}" color="#712cf9">
+	<link rel="icon" href="{{ url_for('static', filename='icon.png') }}">
+	<meta name="theme-color" content="#712cf9">
+	
+ <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  
+	   @media (min-width: 481px) and (max-width: 768px) {
+		.container {
+    flex-direction: column;
+	}
+
+	.container div {
+    font-size: 4rem;
+	}
+	}
+
+	@media (min-width: 769px) and (max-width: 1200px) {
+	.container div {
+    font-size: 4rem;
+	}
+	}
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+	
+	</head>
+
+<body class="d-flex h-1000 text-center text-bg-dark bg-white">
+ <div class="position-absolute top-0 start-0 w-100 h-500 d-flex align-items-center" style="background: rgba(6, 3, 21, .5);">
+<div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+{% import "bootstrap/wtf.html" as wtf %}
+	<h1></h1>
+	<div class="container-fluid py-5 h-100">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<div class="card bg-white text-dark" style="">
+					<div class="card-body p-5 text-center">
+						<h2 class="fw-bold mb-2 text-uppercase">Login INTERLOPE</h2>
+						<p class="text-dark-50 mb-5">Please enter your login and password!</p>
+						{% if pesan%}
+						<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						  <strong>{{ pesan }}</strong>
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+						{% endif %}
+						<div class="login">
+						<form class="{{url_for('login')}}" method="post">
+							{{form.csfr_token}}
+							<div class="form-outline mb-4 d-grid gap-2">
+							{{form.hidden_tag()}}
+							{{wtf.form_field(form.username)}}
+							{{wtf.form_field(form.password)}}
+							{{wtf.form_field(form.level)}}
+								<button type="submit" class="btn btn-info">Login </button>
+							</div>
+							<div>
+								<p class="mb-2"> Tidak Memiliki Akun? <a class="text-white-50 fw-bold" href="/">Daftar Pasien</a></p>
+							</div>
+							<hr class="my-4"> </form>
+					</div>
+						<a type="button" class="btn btn-secondary" href="/">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+						  <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+						</svg>
+							Home
+							</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	</div>
+</body>
+</html>
