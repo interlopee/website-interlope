@@ -13,7 +13,7 @@ import base64
 app = Flask(__name__, template_folder='template')
 
 app.config['SECRET_KEY'] = 'Bismillah23'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/interlope'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://cpses_inxywsck83@localhost/interlope'
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = True
 
 db = SQLAlchemy(app)
